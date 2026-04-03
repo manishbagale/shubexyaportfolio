@@ -1,103 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title> Appointment</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment - Shubhechchha Shah</title>
     <style>
-        body{
-            margin: 0;
-        }
-        #appointment{
-
+        body {
             background-color: rgb(36, 34, 37);
+            color: #c58282;
+            margin: 0;
+            padding: 0;
             font-family: 'Times New Roman', Times, serif;
-          
             display: flex;
             flex-direction: column;
-            align-items:center;
-            min-height: 100vh;
-             
+            align-items: center;
+        }
 
-            
-             }
-            #appointment form {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap:20px;
-                max-width: 500px;
-                font-size: 17px;
-            }
-            #appointment input{
-                width: 400px;
-                 
-                height: 10px;
-    padding: 15px;
-    border-radius: 30px;
-    border: none;
-    font-size: 16px;
-    border: 2.5px solid #c58282;
-    
-   
-}
-#appointment textarea{
-    border-collapse: collapse;
-    width:400px ;
-    height:100px;
-    border: 2.5px solid #c58282;
-    border-radius: 20px;
-   
-}
- #appointment label{
-    color: #c58282;
-}
+        #head {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 20px auto;
+            width: fit-content;
+            padding: 10px;
+            align-items: center;
+            justify-content: center;
+        }
 
- button:hover { 
-    background-color: #c58282;
-    color: aliceblue;
-    cursor:pointer;
+        #head a {
+            font-size: 22px;
+            text-decoration: none;
+            color: #c58282;
+            font-weight: lighter;
+        }
 
+        .form-title {
+            font-size: 32px;
+            margin: 40px 0 20px 0;
+            text-align: center;
+        }
 
- }
-  @media screen and (max-width: 768px) {
-    #appointment input,
-    #appointment textarea {
-        width: 100%; 
-    }
-}
-          
+        .iframe-container {
+            width: 95%;
+            max-width: 640px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
 
- button:hover { 
-    background-color: #c58282;
-    color: aliceblue;
-    cursor:pointer;
-}
-button{
-       border: 2.5px solid #c58282;
-}
+        iframe {
+            width: 100%;
+            height: 800px;
+            border: none;
+            display: block;
+        }
+
+        /* Style for a JavaScript-controlled button */
+        .refresh-btn {
+            margin-bottom: 50px;
+            padding: 10px 20px;
+            background-color: #c58282;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Times New Roman', serif;
+        }
+
+        @media screen and (max-width: 768px) {
+            iframe { height: 600px; }
+        }
     </style>
 </head>
+<body>
 
+    <nav id="head">
+        <a href="index.html">Home</a>
+        <a href="about.html">About me</a>
+        <a href="https://www.facebook.com/share/1HZkqhFwaZ/" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/subexya_shah" target="_blank">Instagram</a>
+    </nav>
 
+    <h2 class="form-title">Book an Appointment</h2>
 
+    <div class="iframe-container">
+        <iframe 
+            id="googleForm"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeYiBGEFK1ZZPsoepPhxJhU9S6s8y1BJ9EQgAMeLB0IKz-1kQ/viewform?embedded=true" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0">
+            Loading…
+        </iframe>
+    </div>
 
-<section id="appointment">
-    <div><h2 style="color: #c58282; text-align: center;">Book an Appointment</h2>
-    
-    <form action="#" method="post">
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" placeholder="Your name" required>
+    <button class="refresh-btn" onclick="reloadForm()">Reload Form</button>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Your email" required>
+    <script>
+        function reloadForm() {
+            var iframe = document.getElementById('googleForm');
+            iframe.src = iframe.src;
+        }
+    </script>
 
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date" required>
-
-        <label for="time">Time:</label>
-        <input type="time" id="time" name="time" required>
-
-        <label for="message" >Message:</label>
-        <textarea id="message" name="message" rows="4" placeholder=       "Write a message..."></textarea>
-
-        <button  type="submit" style="color:black; border-radius: 30px;">Book Appointment</button>
-    </form>
-    
-</section>
+</body>
+</html>
