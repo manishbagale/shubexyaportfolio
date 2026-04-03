@@ -14,7 +14,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Navigation */
+        /* Navigation Bar */
         #head {
             display: flex;
             flex-wrap: wrap;
@@ -40,7 +40,7 @@
             align-items: center;
             justify-content: center;
             gap: 40px;
-            min-height: 90vh; /* Bio takes up most of the screen */
+            min-height: 90vh; 
             padding: 20px;
             flex-wrap: wrap;
         }
@@ -72,7 +72,7 @@
             100% { color: #c58282; }
         }
 
-        /* Appointment Section (Moved below the Bio) */
+        /* Appointment Section (Separated from Bio) */
         .appointment-section {
             display: flex;
             flex-direction: column;
@@ -97,7 +97,7 @@
             display: block;
         }
 
-        /* Mobile Adjustments */
+        /* Responsive Mobile Layout */
         @media screen and (max-width: 768px) {
             #head { gap: 15px; }
             .hero { flex-direction: column; text-align: center; min-height: auto; padding-top: 50px; }
