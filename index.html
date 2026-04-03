@@ -14,15 +14,17 @@
             scroll-behavior: smooth;
         }
 
+        /* Navigation Bar */
         #head {
             display: flex;
             flex-wrap: wrap;
             gap: 30px;
-            margin: 20px auto;
-            width: fit-content;
-            padding: 10px;
-            align-items: center;
+            padding: 20px;
             justify-content: center;
+            position: sticky;
+            top: 0;
+            background-color: rgb(36, 34, 37);
+            z-index: 1000;
         }
 
         #head a {
@@ -32,12 +34,14 @@
             font-weight: lighter;
         }
 
-        .main-content {
+        /* Hero Section (Introduction) */
+        .hero {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 40px;
-            padding: 40px 20px;
+            min-height: 90vh; 
+            padding: 20px;
             flex-wrap: wrap;
         }
 
@@ -63,16 +67,17 @@
         }
 
         @keyframes coloranimation {
-            0%   { color: #f0e877; }
-            50%  { color: #6498db; }
+            0% { color: #f0e877; }
+            50% { color: #6498db; }
             100% { color: #c58282; }
         }
 
+        /* Appointment Section (Separated from Bio) */
         .appointment-section {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 60px 15px;
+            padding: 80px 15px;
             background-color: rgba(255, 255, 255, 0.03);
         }
 
@@ -92,10 +97,10 @@
             display: block;
         }
 
+        /* Responsive Mobile Layout */
         @media screen and (max-width: 768px) {
             #head { gap: 15px; }
-            #head a { font-size: 18px; }
-            .main-content { flex-direction: column; text-align: center; }
+            .hero { flex-direction: column; text-align: center; min-height: auto; padding-top: 50px; }
             .container { width: 250px; height: 250px; }
             .text-pro { font-size: 22px; }
             iframe { height: 600px; }
@@ -105,15 +110,15 @@
 <body>
 
     <nav id="head">
-        <a href="about.html">About me</a>
+        <a href="#">Home</a>
         <a href="#appointment">Appointment</a>
         <a href="https://www.facebook.com/share/1HZkqhFwaZ/" target="_blank">Facebook</a>
         <a href="https://www.instagram.com/subexya_shah?igsh=cnowY245aHZid2Nh" target="_blank">Instagram</a>
     </nav>
 
-    <div class="main-content">
+    <div class="hero">
         <div class="container">
-            <img src="pic.jpg" alt="profile pic">
+            <img src="pic.jpg" alt="Shubhechchha Shah">
         </div>
         <div class="text-pro">
             HI! it’s me Shubhechchha, <br>
@@ -125,7 +130,7 @@
         <h2 style="font-size: 32px; margin-bottom: 25px;">Book an Appointment</h2>
         <div class="iframe-wrapper">
             <iframe 
-                src="https://docs.google.com/forms/d/e/1FAIpQLSeYiBGEFK1ZZPsoepPhxJhU9S6s8y1BJ9EQgAMeLB0IKz-1kQ/viewform?usp=header" 
+                src="https://docs.google.com/forms/d/e/1FAIpQLSeYiBGEFK1ZZPsoepPhxJhU9S6s8y1BJ9EQgAMeLB0IKz-1kQ/viewform?embedded=true" 
                 frameborder="0" 
                 marginheight="0" 
                 marginwidth="0">
